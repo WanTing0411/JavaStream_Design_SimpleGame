@@ -12,4 +12,9 @@ public class Weapon extends Item {
         this.agility=agility;
         this.spirit=spirit;
     }
+
+    public int getDamage() {
+        return damage;
+    }
+
 }

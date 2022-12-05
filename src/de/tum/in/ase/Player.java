@@ -5,8 +5,8 @@ import java.util.List;
 
 public abstract class Player implements Interactions {
   // TODO: Add missing attributes.
-    private Weapon weapon;
-    private List<Armor> armor;
+    protected Weapon weapon;
+    protected List<Armor> armor;
 
     protected String name;
     protected String specification;
@@ -40,32 +40,105 @@ public abstract class Player implements Interactions {
         this.name = name;
         this.weaponType = weaponType;
         health=200;
+        if(getWeaponType()==weapon.getType()){
+            weapon.setEquipped(true);
+        }
     }
     protected boolean isDead(){
         return false;
     }
 
     protected void equipItems(){
+        if(getWeapon().isEquipped()==true){
+            strength=getStrength()+ weapon.getStrength();
+            intelligence=getIntelligence()+ weapon.getIntelligence();
+            agility=getAgility()+ weapon.getAgility();
+            spirit=getSpirit()+ weapon.getSpirit();
+        }
+
+        if(getArmor() != null){
+            for(int i=0;i<getArmor().size();i++){
+                if(getArmor().get(i)!=null){
+                    strength=getStrength()+getArmor().get(i).getStrength();
+                    intelligence=getIntelligence()+getArmor().get(i).getIntelligence();
+                    agility=getAgility()+getArmor().get(i).getAgility();
+                    spirit=getSpirit()+getArmor().get(i).getSpirit();
+                }
+            }
+        }
+
 
     }
+
+
+    // TODO: Implement part 3.
+
 
     public Weapon getWeapon() {
         return weapon;
-    }
-
-    public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
     }
 
     public List<Armor> getArmor() {
         return armor;
     }
 
-    public void setArmor(List<Armor> armor) {
-        this.armor = armor;
+    public String getName() {
+        return name;
     }
 
-    // TODO: Implement part 3.
+    public String getSpecification() {
+        return specification;
+    }
 
+    public int getAmountOfArmor() {
+        return amountOfArmor;
+    }
 
+    public String getWeaponType() {
+        return weaponType;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public int getAgility() {
+        return agility;
+    }
+
+    public int getSpirit() {
+        return spirit;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public Armor getHelmet() {
+        return helmet;
+    }
+
+    public Armor getChest() {
+        return chest;
+    }
+
+    public Armor getHands() {
+        return hands;
+    }
+
+    public Armor getLegs() {
+        return legs;
+    }
+
+    public Armor getBoots() {
+        return boots;
+    }
 }

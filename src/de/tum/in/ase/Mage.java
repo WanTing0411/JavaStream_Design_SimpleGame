@@ -16,6 +16,12 @@ public class Mage extends Player{
     agility=4;
     spirit=6;
     amountOfArmor=5;
+    equipItems();
+
+  }
+
+  public List<Ability> getAbilities() {
+    return abilities;
   }
 
   @Override
@@ -31,4 +37,17 @@ public class Mage extends Player{
     // TODO: Implement part 5.
 
   // TODO: Implement part 6.
+
+  public static void main(String[] args) {
+    List<Ability> abilities = new ArrayList<>();
+    List<Armor> armor=new ArrayList<>();
+    Ability MA =new Ability("Mage:Max", "Mage",10);
+    Armor a1= new Armor("helmet","Mage",1,3,4,3,1);
+    Weapon w1 =new Weapon("Sticker","Marge",10,2,2,2,2);
+    abilities.add(MA);
+    armor.add(a1);
+    Mage M1= new Mage("Mage_Max",abilities,armor,w1,"Sticker");
+  }
 }
+
+

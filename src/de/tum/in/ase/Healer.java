@@ -16,6 +16,10 @@ public class Healer extends Player {
         amountOfArmor=30;
     }
 
+    public List<Ability> getAbilities() {
+        return abilities;
+    }
+
     @Override
     public void attack(Player target) {
 

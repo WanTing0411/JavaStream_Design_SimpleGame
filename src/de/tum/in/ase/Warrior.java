@@ -16,6 +16,10 @@ public class Warrior extends Player {
         amountOfArmor = 15;
     }
 
+    public List<Ability> getAbilities() {
+        return abilities;
+    }
+
     @Override
     public void attack(Player target) {
 

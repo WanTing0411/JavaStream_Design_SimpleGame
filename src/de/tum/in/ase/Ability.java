@@ -13,7 +13,7 @@ public class Ability {
     public Ability(String name, String specification,int amount){
         this.name=name;
         this.specification=specification;
-        if(this.specification=="Mange"){
+        if(this.specification=="Mage"){
             damage=amount;
             heal=-1;
             armor=-1;
@@ -58,6 +58,20 @@ public class Ability {
     }
 
     public static void main(String[] args) {
-        Ability a1= new Ability("Max","Tank",20);
+
+        Ability a1= new Ability("Max","Warrior",10);
+        System.out.println(a1.getDamage());
+
+        Ability a2= new Ability("Max","Healer",10);
+        System.out.println(a2.getDamage());
+
+        Ability a3= new Ability("Max","Mage",10);
+        System.out.println(a3.getDamage());
+
+        Ability a4= new Ability("Max","Tank",10);
+        System.out.println(a4.getDamage());
+
+        Ability a5= new Ability("Max","",10);
+        System.out.println(a5.getDamage());
     }
 }

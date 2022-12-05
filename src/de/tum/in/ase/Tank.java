@@ -17,6 +17,14 @@ public class Tank extends Player {
         amountOfArmor = 30;
     }
 
+    public List<Ability> getAbilities() {
+        return abilities;
+    }
+
+    public Armor getShield() {
+        return shield;
+    }
+
     @Override
     public void attack(Player target) {
 
