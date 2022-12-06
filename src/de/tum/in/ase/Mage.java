@@ -16,7 +16,7 @@ public class Mage extends Player {
         intelligence = 10;
         agility = 4;
         spirit = 6;
-        amountOfArmor = 5;
+        amountOfArmor = getAmountOfArmor()+5;
 
     }
 

@@ -15,7 +15,7 @@ public class Tank extends Player {
         intelligence = 4;
         agility = 6;
         spirit = 2;
-        amountOfArmor = 30;
+        amountOfArmor = getAmountOfArmor()+30;
         equipShield();
     }
 

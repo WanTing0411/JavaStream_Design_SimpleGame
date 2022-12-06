@@ -15,7 +15,7 @@ public class Healer extends Player {
         intelligence=5;
         agility=6;
         spirit=2;
-        amountOfArmor=30;
+        amountOfArmor=getAmountOfArmor()+9;
     }
 //tank equipped decrease isSheild
     public List<Ability> getAbilities() {

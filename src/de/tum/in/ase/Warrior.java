@@ -14,7 +14,7 @@ public class Warrior extends Player {
         intelligence = 2;
         agility = 8;
         spirit = 2;
-        amountOfArmor = 15;
+        amountOfArmor =getAmountOfArmor()+15;
     }
 
     public List<Ability> getAbilities() {

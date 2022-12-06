@@ -73,7 +73,7 @@ public abstract class Player implements Interactions {
                         case "Helmet":
                             if (helmet == null) {
                                 helmet = getArmor().get(i);
-                                amountOfArmor++;
+                                amountOfArmor=getArmor().get(i).getAmountOfArmor();
                                 strength = getStrength() + getArmor().get(i).getStrength();
                                 intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
                                 agility = getAgility() + getArmor().get(i).getAgility();
@@ -83,7 +83,7 @@ public abstract class Player implements Interactions {
                         case "Chest":
                             if (chest == null) {
                                 chest = getArmor().get(i);
-                                amountOfArmor++;
+                                amountOfArmor+=getArmor().get(i).getAmountOfArmor();
                                 strength = getStrength() + getArmor().get(i).getStrength();
                                 intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
                                 agility = getAgility() + getArmor().get(i).getAgility();
@@ -93,7 +93,7 @@ public abstract class Player implements Interactions {
                         case "Hands":
                             if (hands == null) {
                                 hands = getArmor().get(i);
-                                amountOfArmor++;
+                                amountOfArmor+=getArmor().get(i).getAmountOfArmor();
                                 strength = getStrength() + getArmor().get(i).getStrength();
                                 intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
                                 agility = getAgility() + getArmor().get(i).getAgility();
@@ -103,7 +103,7 @@ public abstract class Player implements Interactions {
                         case "Legs":
                             if (legs == null) {
                                 legs = getArmor().get(i);
-                                amountOfArmor++;
+                                amountOfArmor+=getArmor().get(i).getAmountOfArmor();
                                 strength = getStrength() + getArmor().get(i).getStrength();
                                 intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
                                 agility = getAgility() + getArmor().get(i).getAgility();
