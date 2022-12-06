@@ -9,6 +9,7 @@ public class Healer extends Player {
 
     public Healer(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType){
         super(name,armor,weapon,weaponType);
+        specification=getSpecification();
         this.abilities=abilities;
         strength=3;
         intelligence=5;

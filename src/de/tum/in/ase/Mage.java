@@ -10,6 +10,7 @@ public class Mage extends Player {
 
     public Mage(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {
         super(name, armor, weapon, weaponType);
+        specification=getSpecification();
         this.abilities = abilities;
         strength = 2;
         intelligence = 10;

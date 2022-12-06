@@ -8,6 +8,7 @@ public class Warrior extends Player {
 
     public Warrior(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {
         super(name, armor, weapon, weaponType);
+        specification=getSpecification();
         this.abilities = abilities;
         strength = 20;
         intelligence = 2;

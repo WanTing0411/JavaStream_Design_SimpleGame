@@ -8,6 +8,7 @@ public class Tank extends Player {
     private Armor shield;
     public Tank(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType, Armor shield) {
         super(name, armor, weapon, weaponType);
+        specification=getSpecification();
         this.abilities = abilities;
         this.shield =shield;
         strength = 15;
