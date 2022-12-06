@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Player implements Interactions {
-  // TODO: Add missing attributes.
+    // TODO: Add missing attributes.
     protected Weapon weapon;
     protected List<Armor> armor;
 
@@ -24,45 +24,92 @@ public abstract class Player implements Interactions {
     protected Armor legs;
     protected Armor boots;
 
-    protected Player(String name, String specification, int amountOfArmor, List<Armor> armor, Weapon weapon, String weaponType){
-        this.name=name;
-        this.specification=specification;
-        this.amountOfArmor=amountOfArmor;
-        this.armor=armor;
-        this.weapon=weapon;
-        this.weaponType=weaponType;
-        health=200;
-
+    protected Player(String name, String specification, int amountOfArmor, List<Armor> armor, Weapon weapon, String weaponType) {
+        this.name = name;
+        this.specification = specification;
+        this.amountOfArmor = amountOfArmor;
+        this.armor = armor;
+        this.weapon = weapon;
+        this.weaponType = weaponType;
+        health = 200;
+        equipItems();
     }
-    protected Player(String name, List<Armor> armor, Weapon weapon, String weaponType) {
+
+    protected Player(String name, List<Armor> armor, Weapon weapon, String weaponType) { //for each specification
         this.weapon = weapon;
         this.armor = armor;
         this.name = name;
         this.weaponType = weaponType;
-        health=200;
-        if(getWeaponType()==weapon.getType()){
-            weapon.setEquipped(true);
-        }
+        health = 200;
+        equipItems();
     }
-    protected boolean isDead(){
+
+    //tank need to derease shield
+    protected boolean isDead() {
         return false;
     }
 
-    protected void equipItems(){
-        if(getWeapon().isEquipped()==true){
-            strength=getStrength()+ weapon.getStrength();
-            intelligence=getIntelligence()+ weapon.getIntelligence();
-            agility=getAgility()+ weapon.getAgility();
-            spirit=getSpirit()+ weapon.getSpirit();
+    private void HelpsumSkill() {
+        for (int i = 0; i < getArmor().size(); i++) {
+
+        }
+    }
+
+    protected void equipItems() {
+        if (getWeaponType() == weapon.getType()) {
+            weapon.setEquipped(true);
+            strength = getStrength() + weapon.getStrength();
+            intelligence = getIntelligence() + weapon.getIntelligence();
+            agility = getAgility() + weapon.getAgility();
+            spirit = getSpirit() + weapon.getSpirit();
         }
 
-        if(getArmor() != null){
-            for(int i=0;i<getArmor().size();i++){
-                if(getArmor().get(i)!=null){
-                    strength=getStrength()+getArmor().get(i).getStrength();
-                    intelligence=getIntelligence()+getArmor().get(i).getIntelligence();
-                    agility=getAgility()+getArmor().get(i).getAgility();
-                    spirit=getSpirit()+getArmor().get(i).getSpirit();
+        if (getArmor() != null) {
+            for (int i = 0; i < getArmor().size(); i++) {
+                if (getArmor().get(i) != null) {
+                    switch (getArmor().get(i).getType()) {
+                        case "Helmet":
+                            if (helmet == null) {
+                                helmet = getArmor().get(i);
+                                amountOfArmor++;
+                                strength = getStrength() + getArmor().get(i).getStrength();
+                                intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
+                                agility = getAgility() + getArmor().get(i).getAgility();
+                                spirit = getSpirit() + getArmor().get(i).getSpirit();
+                            }
+                            break;
+                        case "Chest":
+                            if (chest == null) {
+                                chest = getArmor().get(i);
+                                amountOfArmor++;
+                                strength = getStrength() + getArmor().get(i).getStrength();
+                                intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
+                                agility = getAgility() + getArmor().get(i).getAgility();
+                                spirit = getSpirit() + getArmor().get(i).getSpirit();
+                            }
+                            break;
+                        case "Hand":
+                            if (hands == null) {
+                                hands = getArmor().get(i);
+                                amountOfArmor++;
+                                strength = getStrength() + getArmor().get(i).getStrength();
+                                intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
+                                agility = getAgility() + getArmor().get(i).getAgility();
+                                spirit = getSpirit() + getArmor().get(i).getSpirit();
+                            }
+                            break;
+                        case "legs":
+                            if (legs == null) {
+                                legs = getArmor().get(i);
+                                amountOfArmor++;
+                                strength = getStrength() + getArmor().get(i).getStrength();
+                                intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
+                                agility = getAgility() + getArmor().get(i).getAgility();
+                                spirit = getSpirit() + getArmor().get(i).getSpirit();
+                            }
+                            break;
+                    }
+
                 }
             }
         }
@@ -140,5 +187,9 @@ public abstract class Player implements Interactions {
 
     public Armor getBoots() {
         return boots;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
     }
 }

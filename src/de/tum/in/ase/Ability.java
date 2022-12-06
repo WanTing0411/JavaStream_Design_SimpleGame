@@ -57,6 +57,10 @@ public class Ability {
         return armor;
     }
 
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
+
     public static void main(String[] args) {
 
         Ability a1= new Ability("Max","Warrior",10);

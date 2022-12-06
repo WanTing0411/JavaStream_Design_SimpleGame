@@ -11,7 +11,6 @@ public class Armor extends Item{
       this.intelligence=intelligence;
       this.agility=agility;
       this.spirit=spirit;
-
   }
 
     public int getAmountOfArmor() {
