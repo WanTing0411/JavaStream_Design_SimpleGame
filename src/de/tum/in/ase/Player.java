@@ -31,6 +31,7 @@ public abstract class Player implements Interactions {
         this.armor = armor;
         this.weapon = weapon;
         this.weaponType = weaponType;
+        level=1;
         health = 200;
         equipItems();
     }
@@ -41,6 +42,7 @@ public abstract class Player implements Interactions {
         this.name = name;
         this.weaponType = weaponType;
         health = 200;
+        level=1;
         equipItems();
     }
 

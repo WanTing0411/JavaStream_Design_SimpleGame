@@ -26,13 +26,20 @@ public class Mage extends Player {
 
     @Override
     public void attack(Player target) {
-        double Damage = getStrength() * 0.4 + weapon.getDamage() + getAgility() * 0.4 - target.amountOfArmor;
-        if(Damage<0){
+        //getStrength()*0.4+weapon.getDamage()+getAgility()*0.4-target.amountOfArmor;
+        if(getWeaponType() != weapon.getType()){
             System.out.println("You don't have a weapon to attack!");
-            System.out.println("Target "+target.getName()+" didn't receive any damage!");
-        } else if (target.getHealth() -Damage <= 0) {
-            System.out.println(this.getName() + " killed " + target.getName());
-            level++;
+        }else{
+            double Damage = getStrength() * 0.4 + weapon.getDamage() + getAgility() * 0.4 - target.amountOfArmor;
+            if(Damage<0){
+                System.out.println("Target "+target.getName()+" didn't receive any damage!");
+            } else if (target.getHealth() -Damage <= 0) {
+                System.out.println(this.getName() + " killed " + target.getName());
+                setHealth(0);
+                level++;
+            }else{
+                setHealth(target.getHealth() -Damage);
+            }
         }
     }
 
