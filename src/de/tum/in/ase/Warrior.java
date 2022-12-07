@@ -10,10 +10,10 @@ public class Warrior extends Player {
         super(name, armor, weapon, weaponType);
         specification="Warrior";
         this.abilities = abilities;
-        strength = 20;
-        intelligence = 2;
-        agility = 8;
-        spirit = 2;
+        strength = getStrength()+20;
+        intelligence = getIntelligence()+2;
+        agility = getAgility()+8;
+        spirit = getSpirit()+2;
         amountOfArmor =getAmountOfArmor()+15;
     }
 

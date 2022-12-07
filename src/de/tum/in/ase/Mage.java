@@ -12,10 +12,10 @@ public class Mage extends Player {
         super(name, armor, weapon, weaponType);
         specification="Mage";
         this.abilities = abilities;
-        strength = 2;
-        intelligence = 10;
-        agility = 4;
-        spirit = 6;
+        strength = getStrength()+2;
+        intelligence = getIntelligence()+10;
+        agility = getAgility()+4;
+        spirit = getSpirit()+6;
         amountOfArmor = getAmountOfArmor()+5;
 
     }
@@ -30,7 +30,7 @@ public class Mage extends Player {
         if(getWeaponType() != weapon.getType()){
             System.out.println("You don't have a weapon to attack!");
         }else{
-            double Damage = getStrength() * 0.4 + weapon.getDamage() + getAgility() * 0.4 - target.amountOfArmor;
+            double Damage = this.getStrength() * 0.4 + weapon.getDamage() + this.getAgility() * 0.4 - target.amountOfArmor;
             if(Damage<0){
                 System.out.println("Target "+target.getName()+" didn't receive any damage!");
             } else if (target.getHealth() -Damage <= 0) {

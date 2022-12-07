@@ -11,10 +11,10 @@ public class Healer extends Player {
         super(name,armor,weapon,weaponType);
         specification="Healer";
         this.abilities=abilities;
-        strength=3;
-        intelligence=5;
-        agility=6;
-        spirit=2;
+        strength=getStrength()+3;
+        intelligence=getIntelligence()+5;
+        agility=getAgility()+6;
+        spirit=getSpirit()+2;
         amountOfArmor=getAmountOfArmor()+9;
     }
 //tank equipped decrease isSheild
