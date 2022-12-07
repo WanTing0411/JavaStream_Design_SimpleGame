@@ -35,7 +35,7 @@ public class Healer extends Player {
                 setHealth(0);
                 level++;
             }else{
-                setHealth(target.getHealth() -Damage);
+                target.setHealth(target.getHealth() -Damage);
             }
         }
     }

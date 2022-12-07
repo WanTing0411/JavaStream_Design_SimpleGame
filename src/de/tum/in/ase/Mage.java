@@ -38,7 +38,7 @@ public class Mage extends Player {
                 setHealth(0);
                 level++;
             }else{
-                setHealth(target.getHealth() -Damage);
+                target.setHealth(target.getHealth() -Damage);
             }
         }
     }
@@ -56,6 +56,8 @@ public class Mage extends Player {
             }else if(target.getHealth()-Damage<=0){
                 System.out.println(this.getName() + " killed " + target.getName());
                 level++;
+            }else{
+                target.setHealth(target.getHealth() -Damage);
             }
         }
     }
