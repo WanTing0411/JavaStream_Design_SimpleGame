@@ -110,16 +110,16 @@ public abstract class Player implements Interactions {
                                 spirit = getSpirit() + getArmor().get(i).getSpirit();
                             }
                             break;
-//                        case "Boots":
-//                            if (boots == null) {
-//                                boots = getArmor().get(i);
-//                                amountOfArmor++;
-//                                strength = getStrength() + getArmor().get(i).getStrength();
-//                                intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
-//                                agility = getAgility() + getArmor().get(i).getAgility();
-//                                spirit = getSpirit() + getArmor().get(i).getSpirit();
-//                            }
-//                            break;
+                        case "Boots":
+                            if (boots == null) {
+                                boots = getArmor().get(i);
+                                amountOfArmor++;
+                                strength = getStrength() + getArmor().get(i).getStrength();
+                                intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
+                                agility = getAgility() + getArmor().get(i).getAgility();
+                                spirit = getSpirit() + getArmor().get(i).getSpirit();
+                            }
+                            break;
                     }
 
                 }
