@@ -11,11 +11,11 @@ public class Tank extends Player {
         specification="Tank";
         this.abilities = abilities;
         this.shield =shield;
+        equipShield();
         strength = getStrength()+15;
         intelligence = getIntelligence()+4;
-        agility = getAgility()+6;
         spirit = getSpirit()+2;
-        equipShield();
+        agility = getAgility()+6;
         amountOfArmor = getAmountOfArmor()+30;
     }
 
