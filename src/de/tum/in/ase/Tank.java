@@ -14,8 +14,8 @@ public class Tank extends Player {
         equipShield();
         strength = getStrength()+15;
         intelligence = getIntelligence()+4;
-        spirit = getSpirit()+2;
         agility = getAgility()+6;
+        spirit = getSpirit()+2;
         amountOfArmor = getAmountOfArmor()+30;
     }
 
@@ -28,18 +28,11 @@ public class Tank extends Player {
     }
 
     private void equipShield(){
-        if (getArmor() != null) {
-            for (int i = 0; i < getArmor().size(); i++) {
-                if (getArmor().get(i) != null && getArmor().get(i).getType()==shield.getType()) {
-                    amountOfArmor+=getArmor().get(i).getAmountOfArmor();
-                    strength = getStrength() + getArmor().get(i).getStrength();
-                    intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
-                    agility = getAgility() + getArmor().get(i).getAgility();
-                    spirit = getSpirit() + getArmor().get(i).getSpirit();
-                }
-            }
-        }
-
+        amountOfArmor+=getShield().getAmountOfArmor();
+        strength+=getShield().getStrength();
+        intelligence+=getShield().getIntelligence();
+        agility+=getShield().getAgility();
+        spirit+=getShield().getSpirit();
     }
     @Override
     public void attack(Player target) {
