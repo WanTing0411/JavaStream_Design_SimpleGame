@@ -73,7 +73,7 @@ public abstract class Player implements Interactions {
                         case "Helmet":
                             if (helmet == null) {
                                 helmet = getArmor().get(i);
-                                amountOfArmor=getArmor().get(i).getAmountOfArmor();
+                                amountOfArmor+=getArmor().get(i).getAmountOfArmor();
                                 strength = getStrength() + getArmor().get(i).getStrength();
                                 intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
                                 agility = getAgility() + getArmor().get(i).getAgility();
@@ -113,7 +113,7 @@ public abstract class Player implements Interactions {
                         case "Boots":
                             if (boots == null) {
                                 boots = getArmor().get(i);
-                                amountOfArmor++;
+                                amountOfArmor+=getArmor().get(i).getAmountOfArmor();
                                 strength = getStrength() + getArmor().get(i).getStrength();
                                 intelligence = getIntelligence() + getArmor().get(i).getIntelligence();
                                 agility = getAgility() + getArmor().get(i).getAgility();
