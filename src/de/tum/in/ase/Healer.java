@@ -13,8 +13,8 @@ public class Healer extends Player {
         this.abilities=abilities;
         strength=getStrength()+3;
         intelligence=getIntelligence()+5;
-        agility=getAgility()+6;
-        spirit=getSpirit()+2;
+        agility=getAgility()+3;
+        spirit=getSpirit()+10;
         amountOfArmor=getAmountOfArmor()+9;
     }
 //tank equipped decrease isSheild
